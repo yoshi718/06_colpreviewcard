@@ -1,115 +1,157 @@
-@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
-
+/* RESET */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 920x500 */
+/***********************************************/
+/* VARIABLES */
+/***********************************************/
 
 :root {
-  /********************** VARIABLES */
-
-  /************* COLORS */
-  /* PRIMARY */
-  --clr-primary-bright: hsl(31, 77%, 52%);
-  --clr-primary-dark: hsl(184, 100%, 22%);
-  --clr-primary-verydark: hsl(179, 100%, 13%);
-
-  /* NEUTRAL */
-  /* paragraphs */
-  --clr-neutral-white: hsla(0, 0%, 100%, 0.75);
-  /* background, headings, buttons */
-  --clr-neutral-verylight: hsl(0, 0%, 95%);
-
-  /* FONTS */
   --ff-primary-400: "Lexend Deca", sans-serif;
-  --ff-secondary-700: "Big Shoulders Display", cursive;
+  --ff-secondarry-700: "Big Shoulders Display", cursive;
+
+  --clr-sedans: hsl(31, 77%, 52%);
+  --clr-suvs: hsl(184, 100%, 22%);
+  --clr-luxury: hsl(179, 82%, 17%);
 }
 
-html {
-  font-size: 16px;
+/***********************************************/
+/* GENERAL */
+/***********************************************/
+
+body,
+button {
   font-family: var(--ff-primary-400);
 }
 
-body {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.main {
+  padding: 1rem;
 }
 
-main {
-  width: 57.5rem;
-  height: 31.25rem;
-  display: flex;
-}
-
-.card {
-  flex-basis: 100%;
-  height: 31.25rem;
-  padding: 3rem 3rem 0 3rem;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-}
-
-.card__img {
-  padding-bottom: 2rem;
-  width: 64px;
-}
-
-.card__sedan {
-  background-color: var(--clr-primary-bright);
-}
-
-.card__suv {
-  background-color: var(--clr-primary-dark);
-}
-
-.card__luxury {
-  background-color: var(--clr-primary-verydark);
-}
-
-.vehicle-type {
-  font-size: 2.5rem;
-  font-family: var(--ff-secondary-700);
-  padding-bottom: 1.5rem;
+h3 {
+  font-family: var(--ff-secondarry-700);
   text-transform: uppercase;
-  color: var(--clr-neutral-white);
+  font-size: 2rem;
 }
 
 p {
-  font-size: 0.85rem;
-  letter-spacing: 1px;
-  font-family: var(--ff-primary-400);
-  color: var(--clr-neutral-verylight);
-  line-height: 1.8;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  letter-spacing: 0.04rem;
 }
 
-.btn {
-  display: flex;
-  height: 130px;
-  justify-content: left;
-  align-items: center;
-  /* width: 70%;
-  text-align: center;
-  text-decoration: none;
-  font-size: 1rem;
-  font-family: var(--ff-primary-400);
-  background-color: var(--clr-neutral-verylight);
-  border: none;
-  padding: 0.8rem 1.2rem;
-  border-radius: 1000px; */
+/***********************************************/
+/* CARD SETTINGS */
+/***********************************************/
+
+.card {
+  padding: 3rem;
 }
 
-/**************************************************/
-/****************************** FOR FRONTEND COMP */
+.card:first-child {
+  border-radius: 10px 10px 0 0;
+}
+
+.card:last-child {
+  border-radius: 0 0 10px 10px;
+}
+
+.card .btn {
+  font-family: var(--ff-primary-400);
+  padding: 0.75em 1.5em;
+  border-radius: 1.5rem;
+  border: 2px solid #fff;
+  background-color: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.card .btn:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+.card__sedans {
+  background-color: var(--clr-sedans);
+  color: #fff;
+}
+.card__sedans .btn {
+  color: var(--clr-sedans);
+}
+
+.card__suvs {
+  background-color: var(--clr-suvs);
+  color: #fff;
+}
+.card__suvs .btn {
+  color: var(--clr-suvs);
+}
+
+.card__luxury {
+  background-color: var(--clr-luxury);
+  color: #fff;
+}
+.card__luxury .btn {
+  color: var(--clr-luxury);
+}
+
+.card img {
+  margin-bottom: 1.8rem;
+}
+
+.card h3 {
+  margin-bottom: 1.2rem;
+}
+
+.card p {
+  margin-bottom: 1.5rem;
+}
+
+/***********************************************/
+/* PRE-BUILT FROM FRONTEND CHALLENGE */
+/***********************************************/
+
 .attribution {
   font-size: 11px;
   text-align: center;
 }
 .attribution a {
   color: hsl(228, 45%, 44%);
+}
+
+/***********************************************/
+/* MEDIA QUERIES */
+/***********************************************/
+
+@media (min-width: 800px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .main {
+    max-width: 58rem;
+    display: flex;
+  }
+
+  .card {
+    flex-basis: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .card:first-child {
+    border-radius: 10px 0 0 10px;
+  }
+
+  .card:last-child {
+    border-radius: 0 10px 10px 0;
+  }
 }

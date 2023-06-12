@@ -1,0 +1,115 @@
+@import url("https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&family=Lexend+Deca&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* 920x500 */
+
+:root {
+  /********************** VARIABLES */
+
+  /************* COLORS */
+  /* PRIMARY */
+  --clr-primary-bright: hsl(31, 77%, 52%);
+  --clr-primary-dark: hsl(184, 100%, 22%);
+  --clr-primary-verydark: hsl(179, 100%, 13%);
+
+  /* NEUTRAL */
+  /* paragraphs */
+  --clr-neutral-white: hsla(0, 0%, 100%, 0.75);
+  /* background, headings, buttons */
+  --clr-neutral-verylight: hsl(0, 0%, 95%);
+
+  /* FONTS */
+  --ff-primary-400: "Lexend Deca", sans-serif;
+  --ff-secondary-700: "Big Shoulders Display", cursive;
+}
+
+html {
+  font-size: 16px;
+  font-family: var(--ff-primary-400);
+}
+
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+main {
+  width: 57.5rem;
+  height: 31.25rem;
+  display: flex;
+}
+
+.card {
+  flex-basis: 100%;
+  height: 31.25rem;
+  padding: 3rem 3rem 0 3rem;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+.card__img {
+  padding-bottom: 2rem;
+  width: 64px;
+}
+
+.card__sedan {
+  background-color: var(--clr-primary-bright);
+}
+
+.card__suv {
+  background-color: var(--clr-primary-dark);
+}
+
+.card__luxury {
+  background-color: var(--clr-primary-verydark);
+}
+
+.vehicle-type {
+  font-size: 2.5rem;
+  font-family: var(--ff-secondary-700);
+  padding-bottom: 1.5rem;
+  text-transform: uppercase;
+  color: var(--clr-neutral-white);
+}
+
+p {
+  font-size: 0.85rem;
+  letter-spacing: 1px;
+  font-family: var(--ff-primary-400);
+  color: var(--clr-neutral-verylight);
+  line-height: 1.8;
+}
+
+.btn {
+  display: flex;
+  height: 130px;
+  justify-content: left;
+  align-items: center;
+  /* width: 70%;
+  text-align: center;
+  text-decoration: none;
+  font-size: 1rem;
+  font-family: var(--ff-primary-400);
+  background-color: var(--clr-neutral-verylight);
+  border: none;
+  padding: 0.8rem 1.2rem;
+  border-radius: 1000px; */
+}
+
+/**************************************************/
+/****************************** FOR FRONTEND COMP */
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
